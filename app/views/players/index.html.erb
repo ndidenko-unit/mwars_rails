@@ -1,0 +1,25 @@
+<h2>Players</h2>
+
+<% if @players.empty? %>
+    <b>No players in game</b>
+<% else %>
+    <table class="table">
+      <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Games</th>
+        <th>Victories</th>
+        <th>Losses</th>
+      </tr>
+
+      <% @players.each do |player| %>
+          <tr>
+            <td><%= player.id %></td>
+            <td><%= link_to player.name, player_path(player) %></td>
+            <td><%= player.games %></td>
+            <td><%= player.victories %></td>
+            <td><%= player.losses %></td>
+          </tr>
+      <% end %>
+    </table>
+<% end %>

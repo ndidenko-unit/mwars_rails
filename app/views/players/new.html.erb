@@ -1,0 +1,6 @@
+<h1>Create new player</h1>
+
+<%= form_for @player do |form| %>
+    <p>Name: <br/><%= form.text_field :name %></p>
+    <p><%= form.submit "Create player", class: 'btn-primary' %></p>
+<% end %>
