@@ -1,0 +1,8 @@
+<h1>Create new battle</h1>
+
+<%= form_for @battle do |form| %>
+    <p>Left player: <br/><%= form.text_field :left_player %></p>
+    <p>Right player: <br/><%= form.text_field :right_player %></p>
+    <p><%= form.submit "Create player", class: 'btn-primary' %></p>
+<% end %>
+

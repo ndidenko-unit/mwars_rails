@@ -11,6 +11,9 @@
 
   <body>
     <p><h1>MathWars</h1></p>
+    <a href="<%= new_battle_path %>"><button type="button"  class="btn btn-primary">New battle</button></a>
+    <a href="<%= players_path %>"><button type="button" class="btn btn-primary">All players</button></a>
+    <a href="<%= battles_path %>"><button type="button" class="btn btn-primary">All battles</button></a>
     <%= yield %>
   </body>
 </html>

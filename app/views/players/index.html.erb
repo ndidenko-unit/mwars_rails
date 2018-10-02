@@ -12,7 +12,7 @@
         <th>Losses</th>
       </tr>
 
-      <% @players.each do |player| %>
+      <% @players.reverse_each do |player| %>
           <tr>
             <td><%= player.id %></td>
             <td><%= link_to player.name, player_path(player) %></td>

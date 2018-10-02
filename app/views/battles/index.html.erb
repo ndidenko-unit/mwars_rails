@@ -1,0 +1,28 @@
+<h2>Players</h2>
+
+<% if @battles.empty? %>
+    <b>No players in game</b>
+<% else %>
+    <table class="table">
+      <tr>
+        <th>id</th>
+        <th>Left player</th>
+        <th>Right player</th>
+        <th>Left scores</th>
+        <th>Right scores</th>
+      </tr>
+
+      <% @battles.reverse_each do |battle| %>
+          <tr>
+            <td><%= battle.id %></td>
+            <td><%= battle.left_player %></td>
+            <td><%= battle.right_player %></td>
+            <td><%= battle.left_scores %></td>
+            <td><%= battle.right_scores %></td>
+          </tr>
+      <% end %>
+    </table>
+<% end %>
+
+<!--<td>link_to battle.left_player, player_path(battle.players[0]) %></td>-->
+<!--<td>link_to battle.right_player, player_path(battle.players[1]) %></td>-->
