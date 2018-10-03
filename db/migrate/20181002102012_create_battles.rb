@@ -5,6 +5,7 @@ class CreateBattles < ActiveRecord::Migration[5.2]
       t.string  :right_player
       t.integer :left_scores, default: 100
       t.integer :right_scores, default: 100
+      t.integer :turn, default: 2
       t.timestamps
     end
   end

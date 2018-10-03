@@ -10,20 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_02_102227) do
+ActiveRecord::Schema.define(version: 2018_10_03_111036) do
+
+  create_table "battle_to_players", force: :cascade do |t|
+    t.integer "battle_id"
+    t.integer "player_id"
+    t.index ["battle_id"], name: "index_battle_to_players_on_battle_id"
+    t.index ["player_id"], name: "index_battle_to_players_on_player_id"
+  end
 
   create_table "battles", force: :cascade do |t|
     t.string "left_player"
     t.string "right_player"
     t.integer "left_scores", default: 100
     t.integer "right_scores", default: 100
+    t.integer "turn", default: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "battles_players", id: false, force: :cascade do |t|
-    t.integer "battle_id"
-    t.integer "player_id"
   end
 
   create_table "players", force: :cascade do |t|

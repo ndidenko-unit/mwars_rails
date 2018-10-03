@@ -14,9 +14,9 @@
 
       <% @battles.reverse_each do |battle| %>
           <tr>
-            <td><%= battle.id %></td>
-            <td><%= battle.left_player %></td>
-            <td><%= battle.right_player %></td>
+            <td><%= link_to battle.id, battle_path(battle) %></td>
+            <td><%= link_to battle.players.first.name, battle.players.first %></td>
+            <td><%= link_to battle.players.last.name, battle.players.last %></td>
             <td><%= battle.left_scores %></td>
             <td><%= battle.right_scores %></td>
           </tr>

@@ -1,2 +1,12 @@
 <h1><%= @battle.left_player %> vs <%= @battle.right_player %>
 <p><%= @battle.left_scores %> : <%= @battle.right_scores %></p></h1>
+<% if @battle.turn == 1 %>
+    <p>Ход игрока 1</p>
+    Player: <%= @battle.left_player %> У тебя есть 10 секунд на выстрел. Ты готов?
+<% elsif @battle.turn == 2 %>
+    <p>Ход игрока 2</p>
+    Player: <%= @battle.right_player %> У тебя есть 10 секунд на выстрел. Ты готов?
+<% end %>
+
+<p><a href="<%= edit_battle_path %>"><button type="button" class="btn btn-primary">Готов!</button></a></p>
+
