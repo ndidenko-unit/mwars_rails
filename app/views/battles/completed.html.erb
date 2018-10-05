@@ -14,16 +14,14 @@
 
   <div class="col-md-12 pl">
     <center>
-      <div class="alert alert-info" role="alert">
-        <h3><%= @battle.example %></h3>
-
-      <%= form_for @battle do |form| %>     <!--@item определен в контроллере, метод create-->
-          <p><br/><%= form.text_field :answer, class: 'form-control', autofocus: true, autocomplete: false, size: 5 %></p>
-          <p><%= form.submit "Удар!", class: 'btn-primary' %></p>
+    <h2>Бой завершен</h2>
+      <p><h4>
+    <% if @battle.left_scores == 0 %>
+        Победил <%= @battle.right_player %>
+    <% else %>
+        Победил <%= @battle.left_player %>
       <% end %>
-      </div>
-      <!--<p><a href="<%= battle_path %>"><button type="button" class="btn btn-primary">Огонь!</button></a></p>-->
-      <p><%= @battle.answer %></p>
+    </h4></p>
     </center>
   </div>
 
@@ -37,3 +35,4 @@
   </div>
   <div class="img_ninja"><%= image_tag("right_ninja.jpg") %></div>
 </div>
+

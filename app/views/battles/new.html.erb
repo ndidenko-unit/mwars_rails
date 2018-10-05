@@ -1,8 +1,40 @@
-<h1>Create new battle</h1>
+<br><br>
+<div class="col-md-3"></div>
+<div class="col-md-2" alt="LeftSide">
+  <h1><center><%= @battle.left_player %></center></h1>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="<%= @battle.left_scores %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @battle.left_scores %>%;">
+      <%= @battle.left_scores %>
+    </div>
+  </div>
+  <div class="img_ninja"><%= image_tag("left_ninja.jpg") %></div>
+</div>
+<div class="col-md-2" alt="CenterSide">
+  <h1><center> vs </center></h1>
 
-<%= form_for @battle do |form| %>
-    <p>Left player: <br/><%= form.text_field :left_player %></p>
-    <p>Right player: <br/><%= form.text_field :right_player %></p>
-    <p><%= form.submit "Create player", class: 'btn-primary' %></p>
-<% end %>
+  <div class="col-md-12 pl">
+    <center>
+      <h1>Создать бой</h1>
+
+      <%= form_for @battle do |form| %>
+          <p>Игрок слева: <br/><%= form.text_field  :left_player, class: 'form-control' %></p>
+          <p>Игрок справа: <br/><%= form.text_field :right_player, class: 'form-control' %></p>
+          <p><%= form.submit "Начать бой", class: 'btn-primary' %></p>
+      <% end %>
+    </center>
+  </div>
+
+</div>
+<div class="col-md-2" alt="RightSide">
+  <h1><center><%= @battle.right_player %></center></h1>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="<%= @battle.right_scores %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @battle.right_scores %>%;">
+      <%= @battle.right_scores %>
+    </div>
+  </div>
+  <div class="img_ninja"><%= image_tag("right_ninja.jpg") %></div>
+</div>
+
+
+
 

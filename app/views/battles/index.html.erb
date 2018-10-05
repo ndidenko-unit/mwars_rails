@@ -1,7 +1,7 @@
-<h2>Players</h2>
+<h2>Battles</h2>
 
 <% if @battles.empty? %>
-    <b>No players in game</b>
+    <b>No battles in game</b>
 <% else %>
     <table class="table">
       <tr>
@@ -13,7 +13,9 @@
       </tr>
 
       <% @battles.reverse_each do |battle| %>
-          <tr>
+          <tr<% if battle.left_scores == 0 or battle.right_scores == 0 %>
+           class="success" <% end %>
+          >
             <td><%= link_to battle.id, battle_path(battle) %></td>
             <td><%= link_to battle.players.first.name, battle.players.first %></td>
             <td><%= link_to battle.players.last.name, battle.players.last %></td>

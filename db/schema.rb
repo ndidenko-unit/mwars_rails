@@ -24,7 +24,14 @@ ActiveRecord::Schema.define(version: 2018_10_03_111036) do
     t.string "right_player"
     t.integer "left_scores", default: 100
     t.integer "right_scores", default: 100
-    t.integer "turn", default: 2
+    t.integer "turn"
+    t.string "example"
+    t.integer "result"
+    t.integer "answer"
+    t.integer "wound"
+    t.integer "start_kick"
+    t.integer "seconds"
+    t.boolean "hit", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
