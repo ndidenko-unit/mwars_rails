@@ -35,22 +35,6 @@ class BattlesController < ApplicationController
     end
   end
 
-  def add_statistics(battle)
-    @player1 = Player.where(name: battle.left_player).first
-    @player2 = Player.where(name: battle.right_player).first
-    @player1.games += 1
-    @player2.games += 1
-    if battle.left_scores == 0
-      @player2.victories += 1
-      @player1.losses += 1
-    elsif battle.right_scores == 0
-      @player1.victories += 1
-      @player2.losses += 1
-    end
-    @player1.save
-    @player2.save
-  end
-
   def new
     @battle = Battle.new
     @left_player = Player.new
@@ -108,6 +92,23 @@ class BattlesController < ApplicationController
   end
 
   private
+
+  def add_statistics(battle)
+    player1 = Player.where(name: battle.left_player).first
+    player2 = Player.where(name: battle.right_player).first
+    player1.games += 1
+    player2.games += 1
+    if battle.left_scores == 0
+      player2.victories += 1
+      player1.losses += 1
+    elsif battle.right_scores == 0
+      player1.victories += 1
+      player2.losses += 1
+    end
+    player1.save
+    player2.save
+  end
+
   def activate_wound(battle)
     if battle.turn == 1
       battle.left_scores -= @battle.wound

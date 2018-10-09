@@ -1,15 +1,15 @@
-<h2>Players</h2>
+<center></center><h2>Игроки</h2></center>
 
 <% if @players.empty? %>
-    <b>No players in game</b>
+    <center><b>В игре пока еще нет игроков</b></center>
 <% else %>
     <table class="table">
       <tr>
-        <th>id</th>
-        <th>Name</th>
-        <th>Games</th>
-        <th>Victories</th>
-        <th>Losses</th>
+        <th>ID</th>
+        <th>Имя игрока</th>
+        <th>Всего боев</th>
+        <th>Побед</th>
+        <th>Поражений</th>
       </tr>
 
       <% @players.reverse_each do |player| %>

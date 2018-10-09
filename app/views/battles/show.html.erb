@@ -23,8 +23,10 @@
               <%= @battle.right_player %> не попал по сопернику. Правильный ответ: <font color="red"><%= @battle.result %></font>
             </div>
         <% end %>
-        <p>Ход игрока 1</p>
-        Player: <%= @battle.left_player %> <p>У тебя есть 10 секунд на удар. Ты готов?</p>
+        <div class="alert alert-info" role="alert">
+        <p><b>Ход игрока <%= @battle.left_player %></b></p>
+        <p>У тебя есть 10 секунд на удар. Ты готов?</p>
+        </div>
     <% elsif @battle.turn == 2 %>
         <% if @battle.seconds != nil and @battle.hit == true %>
             <div class="alert alert-success" role="alert">
@@ -35,8 +37,10 @@
               <%= @battle.left_player %> не попал по сопернику. Правильный ответ: <font color="red"><%= @battle.result %></font>
             </div>
         <% end %>
-        <p>Ход игрока 2</p>
-        Игрок: <%= @battle.right_player %> <p>У тебя есть 10 секунд на удар. Ты готов?</p>
+        <div class="alert alert-info" role="alert">
+        <p><b>Ход игрока <%= @battle.right_player %></b></p>
+        <p>У тебя есть 10 секунд на удар. Ты готов?</p>
+        </div>
     <% end %>
     <br><br>
     <p><a href="<%= edit_battle_path %>"><button type="button" class="btn btn-primary" autofocus>Готов!</button></a></p></center>
