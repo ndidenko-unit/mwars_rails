@@ -1,5 +1,5 @@
 # README
 
-My first RoR app. Math game for two players.
+I invented math game for two players.
 
 You can try it: https://mwars.herokuapp.com/
